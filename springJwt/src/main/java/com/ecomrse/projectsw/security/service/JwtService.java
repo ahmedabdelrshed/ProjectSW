@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.ecomrse.projectsw.security.model.User;
-import com.ecomrse.projectsw.security.repository.TokenRepository;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
@@ -18,26 +17,14 @@ import java.util.function.Function;
 public class JwtService {
 
     private final String SECRET_KEY = "4bb6d1dfbafb64a681139d1586b6f1160d18159afd57c8c79136d7490630407c";
-    private final TokenRepository tokenRepository;
-
-    public JwtService(TokenRepository tokenRepository) {
-        this.tokenRepository = tokenRepository;
-    }
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
-
     public boolean isValid(String token, UserDetails user) {
         String username = extractUsername(token);
-
-        boolean validToken = tokenRepository
-                .findByToken(token)
-                .map(t -> !t.isLoggedOut())
-                .orElse(false);
-
-        return (username.equals(user.getUsername())) && !isTokenExpired(token) && validToken;
+        return (username.equals(user.getUsername())) && !isTokenExpired(token);
     }
 
     private boolean isTokenExpired(String token) {
@@ -62,13 +49,12 @@ public class JwtService {
                 .getPayload();
     }
 
-
     public String generateToken(User user) {
         String token = Jwts
                 .builder()
                 .subject(user.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 24*60*60*1000 ))
+                .expiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
                 .signWith(getSigninKey())
                 .compact();
 

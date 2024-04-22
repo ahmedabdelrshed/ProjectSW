@@ -33,8 +33,7 @@ public class User implements UserDetails {
     private Role role;
 
 
-    @OneToMany(mappedBy = "user")
-    private List<Token> tokens;
+   
 
     public Integer getId() {
         return id;
@@ -107,13 +106,5 @@ public class User implements UserDetails {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public List<Token> getTokens() {
-        return tokens;
-    }
-
-    public void setTokens(List<Token> tokens) {
-        this.tokens = tokens;
     }
 }
