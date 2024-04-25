@@ -13,7 +13,9 @@ submit.addEventListener("click", function (e) {
   }else{
     register(firstName.value, lastName.value, username.value, password.value)
     .then(data => {
-        console.log('Registration successful:', data);
+        setTimeout(() => {
+          window.location = 'index.html'
+      }, 1500);
        
     })
     .catch(error => {
@@ -44,6 +46,7 @@ async function register(firstName, lastName, username, password) {
     massage.style.display = "block";
      
   }
+
 }
 
 

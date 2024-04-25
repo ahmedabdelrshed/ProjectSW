@@ -3,6 +3,10 @@ package com.ecomrse.projectsw.security.service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
+import java.util.HashMap;
+import java.util.Map;
+
+
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -22,6 +26,11 @@ public class JwtService {
         return extractClaim(token, Claims::getSubject);
     }
 
+    public <T> T extractClaim(String token, Function<Claims, T> resolver) {
+        Claims claims = extractAllClaims(token);
+        return resolver.apply(claims);
+    }
+
     public boolean isValid(String token, UserDetails user) {
         String username = extractUsername(token);
         return (username.equals(user.getUsername())) && !isTokenExpired(token);
@@ -35,11 +44,6 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    public <T> T extractClaim(String token, Function<Claims, T> resolver) {
-        Claims claims = extractAllClaims(token);
-        return resolver.apply(claims);
-    }
-
     private Claims extractAllClaims(String token) {
         return Jwts
                 .parser()
@@ -50,15 +54,19 @@ public class JwtService {
     }
 
     public String generateToken(User user) {
-        String token = Jwts
-                .builder()
-                .subject(user.getUsername())
-                .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
-                .signWith(getSigninKey())
-                .compact();
+        Map<String, Object> extraClaims = new HashMap<>();
+        extraClaims.put("Role", user.getAuthorities().iterator().next().getAuthority());
+        extraClaims.put("Name", user.getFirstName() + user.getLastName());
 
-        return token;
+
+        return Jwts
+        .builder()
+        .setClaims(extraClaims)
+        .setSubject(user.getUsername())
+        .setIssuedAt(new Date(System.currentTimeMillis()))
+        .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))
+        .signWith(getSigninKey())
+        .compact();
     }
 
     private SecretKey getSigninKey() {

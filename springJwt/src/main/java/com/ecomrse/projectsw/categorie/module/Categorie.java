@@ -2,13 +2,7 @@ package com.ecomrse.projectsw.categorie.module;
 
 import jakarta.persistence.*;
 
-import lombok.Data;
-
-import java.util.List;
-
 import org.springframework.stereotype.Component;
-
-import io.micrometer.common.lang.Nullable;
 
 @Component
 @Entity
@@ -18,7 +12,6 @@ public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Nullable()
     private String name;
     private String description;
 

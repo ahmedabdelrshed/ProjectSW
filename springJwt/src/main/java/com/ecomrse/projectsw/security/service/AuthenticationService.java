@@ -1,5 +1,8 @@
 package com.ecomrse.projectsw.security.service;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,9 +35,13 @@ public class AuthenticationService {
 
         // check if user already exist. if exist than authenticate the user
         if (repository.findByUsername(request.getUsername()).isPresent()) {
-            return new AuthenticationResponse(null, "User already exist");
+            return new AuthenticationResponse("User already exist");
         }
-
+        // For validation Data of the user
+        // validateEmail(request.getUsername());
+        validatePassword(request.getPassword());
+        validateName(request.getFirstName());
+        validateName(request.getLastName());
         User user = new User();
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
@@ -46,9 +53,32 @@ public class AuthenticationService {
         user = repository.save(user);
 
         String jwt = jwtService.generateToken(user);
+        System.out.println(jwt);
 
-        return new AuthenticationResponse(jwt, "User registration was successful");
+        return new AuthenticationResponse(jwt);
 
+    }
+
+    public void validateEmail(String username){
+        String regex = "[a-z][a-zA-z0-9]+@(gmail | yahoo) .com";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcherEmail = pattern.matcher(username);
+        if (!matcherEmail.matches()) {
+            throw new IllegalStateException("Please Enter a valid Email Address");
+        }
+    }
+    public void validatePassword(String password){
+        if (password.length() < 8) {
+            throw new IllegalStateException("Password Must be at Least 8 Character");
+        }
+    }
+    public void validateName(String name){
+        String regex = "[a-zA-z]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcherName = pattern.matcher(name);
+        if (!matcherName.matches()) {
+            throw new IllegalStateException("Please Enter a valid Name");
+        }
     }
 
     public AuthenticationResponse authenticate(User request) {
@@ -60,7 +90,7 @@ public class AuthenticationService {
         User user = repository.findByUsername(request.getUsername()).orElseThrow();
         String jwt = jwtService.generateToken(user);
 
-        return new AuthenticationResponse(jwt, "User login was successful");
+        return new AuthenticationResponse(jwt);
 
     }
 }
