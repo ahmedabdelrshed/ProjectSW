@@ -39,10 +39,10 @@ async function fetchCategories() {
   
   function ViewCategories(categories) {
     var categorieshtml = [];
-    categorieshtml = `<option>Choose Categorie</option>`
+    categorieshtml = `<option value="0">Choose Categorie</option>`
     categories.forEach((categorie) => {
       categorieshtml += `
-      <option>${categorie.name}</option>
+      <option value="${categorie.id}">${categorie.name}</option>
          `;
     });
     select.innerHTML = categorieshtml;

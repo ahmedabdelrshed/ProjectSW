@@ -11,10 +11,10 @@ submit.addEventListener("click", function (e) {
     login(username.value, password.value)
       .then((data) => {
         console.log(data.token);
-       var role =  extractpayload(data.token);
+        var role = extractpayload(data.token);
         sessionStorage.setItem("token", data.token);
         // console.log(sessionStorage.getItem("token"));
-        Authorization(role)
+        Authorization(role);
       })
       .catch((error) => {
         console.error("Login failed:", error);
@@ -34,6 +34,7 @@ async function login(username, password) {
 
     if (!response.ok) {
       massage.style.display = "block";
+      return;
     }
     const data = await response.json();
     return data;
@@ -51,13 +52,12 @@ function extractpayload(token) {
   return payload.Role;
 }
 
-function Authorization(role){
-  if (role == 'ADMIN') {
+function Authorization(role) {
+  if (role == "ADMIN") {
     setTimeout(() => {
-      window.location = '../Admin/index2.html'
-  }, 1500);
+      window.location = "../Admin/index2.html";
+    }, 1500);
   }
-
 }
 
 // Example usage:

@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Admin Dashboard</title>
     <!-- Custom CSS -->
+    <script src="../Admin//JS/security.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" type="text/css"
@@ -167,34 +168,18 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
-                                    class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Products</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Categories</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
-                                    class="hide-menu">FeedBacks</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
-                                    class="hide-menu">add </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Categories</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">FeedBacks</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">add </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Products
-                                        </span></a></li>
-                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> categories
-                                        </span></a></li>
+                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Products </span></a></li>
+                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> categories </span></a></li>
                             </ul>
                         </li>
-
+ 
 
                     </ul>
                 </nav>
@@ -240,14 +225,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <h4 class="card-title">Add Product</h4>
+                                    <p class=" text-danger" id="msg"></p>
                                     <div class="form-group row">
                                         <label for="lname"
                                             class="col-sm-3 text-right control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="lname"
+                                            <input type="text" class="form-control" id="name"
                                                 placeholder="Name of the Product">
                                         </div>
                                     </div>
@@ -256,15 +242,23 @@
                                         <label for="email1"
                                             class="col-sm-3 text-right control-label col-form-label">Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control" id="email1"
+                                            <input type="number" class="form-control" id="price"
                                                 placeholder="Price of the Product">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1"
+                                            class="col-sm-3 text-right control-label col-form-label">Amount</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="amount"
+                                                placeholder="Amount of the Product">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="lname"
                                             class="col-sm-3 text-right control-label col-form-label">Description</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="lname"
+                                            <input type="text" class="form-control" id="Description"
                                                 placeholder="Description of the Product">
                                         </div>
                                     </div>
@@ -273,7 +267,7 @@
                                             class="col-sm-3 text-right control-label col-form-label">Categorie</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="selectcategorie">
-                                                <!-- <option>Computers</option> -->
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -284,13 +278,13 @@
                                         <div class="col-md-9">
                                             <div class="custom-file">
                                                 <input type="file" class="form-control-file"
-                                                    id="exampleFormControlFile1">
+                                                    id="image" name="file">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="border-top">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-success">ADD</button>
+                                            <button type="button" class="btn btn-success" id="add">ADD</button>
                                         </div>
                                     </div>
 
@@ -377,6 +371,7 @@
 
                     </script>
                     <script src="JS/selectcategorie.js"></script>
+                    <script src="JS/AddProduct.js"></script>
 </body>
 
 </html>

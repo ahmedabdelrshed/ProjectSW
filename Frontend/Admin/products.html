@@ -11,6 +11,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <script src="../Admin//JS/security.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/extra-libs/multicheck/multicheck.css">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
@@ -150,7 +151,7 @@
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Categories</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">FeedBacks</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">add </span></a>
@@ -180,7 +181,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                     <a href="form-basic.html"> <button  type="button" class="btn btn-primary btn-lg" >Add product</button></a> 
+                     <a href="AddProduct.html"> <button  type="button" class="btn btn-primary btn-lg" >Add product</button></a> 
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -214,16 +215,22 @@
                                       <th scope="col">Id</th>
                                       <th scope="col">Name</th>
                                       <th scope="col">price</th>
+                                      <th scope="col">Amount</th>
+                                      <th scope="col">Description</th>
+                                      <th scope="col">Categorie</th>
                                       <th scope="col">Image</th>
                                       <th scope="col">Action</th>
                                     </tr>
                                   </thead>
-                                  <tbody>
+                                  <tbody id="t-body">
                                     <tr>
                                       <th scope="row">1</th>
                                       <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>Otto</td>
+                                      <td>5</td>
+                                      <td>5</td>
+                                      <td>aaaaaaaaaaa</td>
+                                      <td>Computer</td>
+                                      <td><img src="../images/icon.png" alt="" srcset="" style="width: 40px;height: 40px;"></td>
                                       <td><button type="button" class="btn btn-success btn-sm">Update</button>
                                         <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                                     </tr>
@@ -272,7 +279,7 @@
          ****************************************/
         $('#zero_config').DataTable();
     </script>
-
+<script src="JS/GetProducts.js"></script>
 </body>
 
 </html>
