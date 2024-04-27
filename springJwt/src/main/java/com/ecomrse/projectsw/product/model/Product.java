@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -14,19 +17,21 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
+    @Lob
     private String description;
-    private String imageName;
+    private int amount;
+
+    public int getAmount() {
+        return this.amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     @Lob
+    @Column(name = "image", length = 2000)
     private byte[] image;
-
-    public String getImageName() {
-        return this.imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
 
     public Long getId() {
         return id;
@@ -70,8 +75,16 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Categorie category;
+
+    public byte[] getImage() {
+        return this.image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
 
     // Getters and setters
 }
-

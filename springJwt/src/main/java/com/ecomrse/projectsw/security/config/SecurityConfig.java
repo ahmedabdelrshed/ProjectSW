@@ -38,9 +38,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         req -> req.requestMatchers("/login/**", "/register/**")
                                 .permitAll()
-                                // .requestMatchers("/categorie/manage/**").hasAuthority("ADMIN")
+                                .requestMatchers("/categorie/manage/**").hasAuthority("ADMIN")
+                                .requestMatchers("/products/manage/**").hasAuthority("ADMIN")
                                 .requestMatchers("/feedback/get").hasAuthority("ADMIN")
                                 .requestMatchers("/feedback/add").hasAuthority("USER")
+                                .requestMatchers("/orders/createorder").hasAuthority("USER")
                                 .anyRequest()
                                 .authenticated())
                 .userDetailsService(userDetailsServiceImp)

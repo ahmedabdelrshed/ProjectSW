@@ -1,46 +1,92 @@
 package com.ecomrse.projectsw.product.controller;
 
+import com.ecomrse.projectsw.categorie.module.Categorie;
+import com.ecomrse.projectsw.categorie.repo.CategorieRepo;
+import com.ecomrse.projectsw.categorie.service.CategorieService;
 import com.ecomrse.projectsw.product.model.Product;
 import com.ecomrse.projectsw.product.repository.ProductRepository;
 import com.ecomrse.projectsw.product.service.ProductService;
 import com.ecomrse.projectsw.product.service.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
     private ProductService productService;
-
-    @GetMapping
+    @Autowired
+    private CategorieRepo categorieRepo;
+    @CrossOrigin(origins = "*")
+    @GetMapping("/get")
     public List<Product> getAllProducts() {
         return productService.getproducts();
     }
 
-    @PostMapping("/create_product")
-    public ResponseEntity<String> createProduct(@RequestBody Product product) {
-        return productService.addproduct(product);
+    @CrossOrigin(origins = "*")
+    @PostMapping("/manage/create_product")
+    public ResponseEntity<String> createProduct(
+            @RequestParam("name") String name,
+            @RequestParam("price") Double price,
+            @RequestParam("amount") int amount,
+            @RequestParam("categorie") long categorie,
+            @RequestParam("description") String description,
+            @RequestParam("file") MultipartFile file) {
+        try {
+            byte[] imageData = file.getBytes();
+            Product product = new Product();
+            product.setName(name);
+            product.setPrice(price);
+            product.setDescription(description);
+            product.setImage(imageData);
+            product.setAmount(amount);
+            product.setCategory(categorieRepo.getById(categorie));
+            return productService.addproduct(product);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
     }
 
-    @PutMapping("/{id}/delete")
-    public ResponseEntity<String> updateProduct(@PathVariable(value = "id") Long productId,
-            @RequestBody Product productDetails) {
-        Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
-
-        product.setName(productDetails.getName());
+    @CrossOrigin(origins = "*")
+    @PutMapping("/manage/{id}/update")
+    public ResponseEntity<String> updateProduct(@PathVariable Long id,
+    @RequestParam("name") String name,
+    @RequestParam("price") Double price,
+    @RequestParam("amount") int amount,
+    @RequestParam("categorie") long categorie,
+    @RequestParam("description") String description,
+    @RequestParam("file") MultipartFile file) {
+try {
+    byte[] imageData = file.getBytes();
+    Product product = new Product();
+    product.setName(name);
+    product.setPrice(price);
+    product.setId(id);
+    product.setDescription(description);
+    product.setImage(imageData);
+    product.setAmount(amount);
+    product.setCategory(categorieRepo.getById(categorie));
         return productService.updateProduct(product);
     }
+ catch (IOException e) {
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+}
+}
 
-    @DeleteMapping("/{id}/update")
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/manage/{id}/delete")
     public Map<String, Boolean> deleteProduct(@PathVariable(value = "id") Long productId) {
         productRepository.findById(productId)
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + productId));
@@ -51,8 +97,5 @@ public class ProductController {
         return response;
     }
 
-    @GetMapping("/get_using_categorie")
-    public List<Product> getAllProductsCategorie() {
-        return productService.getproducts();
-    }
+    
 }

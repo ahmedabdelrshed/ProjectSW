@@ -25,13 +25,13 @@ public class CategorieService {
     public ResponseEntity<String> addCategorie(Categorie categorie) {
         // for validation
         if (categorie.getName() == null) {
-            return ResponseEntity.badRequest().body("Name of the Categorie cannot be empty");
+            throw new IllegalStateException("Name of the Categorie cannot be empty");
         }
         if (categorie.getDescription() == null) {
-            return ResponseEntity.badRequest().body("Description of the Categorie cannot be empty");
+            throw new IllegalStateException("Description of the Categorie cannot be empty");
         }
         if (categorieRepo.findByName(categorie.getName()).isPresent()) {
-            return ResponseEntity.badRequest().body("Name of the Categorie Already Exist");
+            throw new IllegalStateException("Name of the Categorie Already Exist");
         }
         
         categorieRepo.save(categorie);
@@ -42,10 +42,10 @@ public class CategorieService {
     public ResponseEntity<String> updateCategorie(Categorie categorie) {
         // for validation
         if (categorie.getName() == null) {
-            throw new IllegalStateException("Name of the Categorie cannot by Empty");
+            return ResponseEntity.badRequest().body("Name of the Categorie cannot by Empty");
         }
         if (categorie.getDescription() == null) {
-            throw new IllegalStateException("Description of the Categorie cannot by Empty");
+            return ResponseEntity.badRequest().body("Description of the Categorie cannot by Empty");
         }
         categorieRepo.save(categorie);
         return ResponseEntity.ok("Categorie Updated successfully");

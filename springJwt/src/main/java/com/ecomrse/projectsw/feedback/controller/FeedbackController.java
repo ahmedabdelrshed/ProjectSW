@@ -13,12 +13,12 @@ import java.util.List;
 public class FeedbackController {
   @Autowired
   private FeedbackService feedbackService;
-
+  @CrossOrigin(origins = "*")
   @GetMapping("/get")
   public List<Feedback> getAllFeedback() {
     return feedbackService.getFeedbacks();
   }
-
+  @CrossOrigin(origins = "*")
   @PostMapping("/add")
   public ResponseEntity<String> add(@RequestBody Feedback feedback) {
     return feedbackService.addFeedback(feedback);
