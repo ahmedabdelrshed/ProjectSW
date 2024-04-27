@@ -58,6 +58,11 @@ function Authorization(role) {
       window.location = "../Admin/index2.html";
     }, 1500);
   }
+  else{
+    setTimeout(() => {
+      window.location = "../User/index.html";
+    }, 1500);
+  }
 }
 
 // Example usage:

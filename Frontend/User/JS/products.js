@@ -3,6 +3,7 @@
 var out = document.getElementById("log-out");
 var user = document.getElementById("user");
 var dproducts = document.querySelector("#products-items");
+var confirm = document.getElementById("Confirm");
 
 
 var products = [];
@@ -11,7 +12,9 @@ if (localStorage.getItem("cart_items")) {
   draw_products(products);
   console.log(products);
 } else {
-  window.location("index.html");
+  confirm.style.display = 'none'
+  // window.location("index.html");
+
 }
 
 function draw_products(items) {
@@ -51,6 +54,7 @@ function plus(id, i) {
     products.find((e) => e.id === id).price *
     products.find((e) => e.id === id).count
   } $`;
+  countTotalPrice();
 }
 
 function minus(id, i) {
@@ -70,6 +74,7 @@ function minus(id, i) {
       products.find((e) => e.id === id).count
     } $`;
   }
+  countTotalPrice();
 }
 
 function remove(id) {
@@ -80,6 +85,63 @@ function remove(id) {
   products = JSON.parse(localStorage.getItem("cart_items"));
   dproducts.innerHTML = "";
   draw_products(products);
+  countTotalPrice();
+}
+
+var totalprice = document.getElementById("total");
+
+function countTotalPrice() {
+  var total = 0;
+  products.forEach((element) => {
+    total += element.count * element.price;
+  });
+
+  totalprice.innerHTML = total + "$";
+}
+countTotalPrice();
+
+var confirm = document.getElementById("Confirm");
+
+confirm.addEventListener("click", function () {
+  products.forEach((product) => {
+    addOrder(
+      product.id,
+      product.price,
+      product.count,
+      product.price * product.count
+    )
+      .then((data) => {
+        
+      })
+      .catch((error) => {
+       
+      });
+  });
+  setTimeout(() => {
+    localStorage.clear()
+    confirm.style.display = 'none'
+    totalprice.innerHTML= ''
+ dproducts.innerHTML = 'Your Product Already Send and we will Contact  With You As Soon As'
+  }, 1000);
+});
+
+async function addOrder(product_id, price, quantity, total) {
+  const apiUrl = "http://localhost:8050/orders/createorder";
+  const jwtToken = sessionStorage.getItem("token");
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ product_id, price, quantity, total }),
+    });
+    return await response.text();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 

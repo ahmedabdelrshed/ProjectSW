@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <!-- BOOTSTRAP STYLE CSS -->
+    <script src="../Admin/JS/Securityuser.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <!-- MAIN Tampelte STYLE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ICONS STYLE -->
+    <link rel="stylesheet" href="css/all.css">
+
+</head>
+
+<body>
+    <!-- START HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-4 ms-lg-5" href="index.html"><img src="images/icon.png" alt=""
+                        style="height: 50px; width: 60px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#computers">Computers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#MobilePhones">MobilePhones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SmartWatch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div id="user" class="btn  border-1 border-warning mx-2 "><span class="text-warning">Welcome,</span>
+                        <span id="uname"></span>
+                    </div>
+                    <div class="shopping-cart"><i id="cart" class="fas fa-shopping-cart text-warning mx-3"
+                            style='font-size:25px; cursor: pointer;'></i>
+                        <span class="number " id='number-items'>0</span>
+                        <div class="cart-items">
+                            <div>
+
+                            </div>
+                            <a href="products.html">View All Products</a>
+                        </div>
+                    </div>
+                    
+
+                        <button  class="btn btn-warning  btn-outline-dark border-warning " onclick="logout(e)">Log
+                            out</button>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="fixed-icon">
+        <div class="social d-flex flex-column justify-content-between ms-auto">
+            <a href="https://www.linkedin.com/in/ahmed-abdelrashed-581607254"><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <!-- END HEADER -->
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/photo-1591370874773-6702e8f12fd8.avif" class="d-block w-100"
+                        style="height: calc(100vh);" alt="...">
+                    <div class="carousel-caption rounded bg-light">
+                        <h2 class="text-warning">Computers</h2>
+                        <p class="text-dark">A computer is a machine that can store and process information.</p>
+                        <button class="btn btn-warning  btn-outline-dark me-3 border-warning" type="submit">Show
+                            more</button>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img src="images/photo-1615494488092-b13b68fe0eb5.avif" class="d-block w-100"
+                        style="height: calc(100vh);" alt="...">
+                    <div class="carousel-caption rounded bg-light">
+                        <h2 class="text-warning">MobilePhones</h2>
+                        <p class="text-dark">MobilePhone is portable telephone that can make and receive calls.</p>
+                        <button class="btn btn-warning  btn-outline-dark me-3 border-warning" type="submit">Show
+                            more</button>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <img src="images/photo-1505740420928-5e560c06d30e.avif" class="d-block w-100"
+                        style="height: calc(100vh);" alt="...">
+                    <div class="carousel-caption rounded bg-light">
+                        <h2 class="text-warning">HeadPhones</h2>
+                        <p class="text-dark">Best wireless headphones.Our pick.JBL Tour One M2.</p>
+                        <button class="btn btn-warning  btn-outline-dark me-3 border-warning" type="submit">Show
+                            more</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/photo-1579586337278-3befd40fd17a.avif" class="d-block w-100"
+                        style="height: calc(100vh);" alt="...">
+                    <div class="carousel-caption rounded bg-light">
+                        <h2 class="text-warning">SmartWatch</h2>
+                        <p class="text-dark">A smartwatch is a wearable computer in the form of a watch.</p>
+                        <button class="btn btn-warning  btn-outline-dark me-3 border-warning" type="submit">Show
+                            more</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="my-3 p-3 mx-2  rounded-3 text-center bg-dark "
+            style="background-image: linear-gradient(to right,#fea00a 0%, #000000 100%);">
+            <img src="images/blackfriday_title.png" style="width: 100px; height: 80; ">
+        </div>
+
+    </main>
+    <!-- START PRODUCTS FOR COMPUTERS -->
+    <section id="computers">
+        <div class="my-3 p-3 mx-2  rounded-3 text-center bg-dark text-light"
+            style="background-image: linear-gradient(to right,#fea00a 0%, #000000 100%); font-style: italic; cursor: pointer;">
+            <h2>BEST SELLER</h2>
+        </div>
+        <div class=" d-flex justify-content-between " id="categories">
+
+
+        </div>
+
+        <hr class="mx-3">
+
+
+        <div class="container">
+            <div class="row" id="computers2">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- START SECTION FOR FEEDBACK -->
+    <section>
+        <div class="container form my-5">
+            <form action="" class="mx-lg-5 contact-form">
+
+                <h2>Feel Free to Send Your Feedback</h2>
+                <p id="msg"></p>
+                <div class="mb-3">
+                    <label for="range" class="form-label">Rate range</label>
+                    <input type="number" class="form-control" placeholder="Rate range" id="range" name="range" required>
+                </div>
+                <div class="mb-3">
+                    <label for="comment">Feedback:</label>
+                    <textarea class="form-control" rows="5" id="feedback" name="text" placeholder="Feedback"
+                        id="feedback" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning btn-outline-dark" id="sendfeedback">Send</button>
+            </form>
+        </div>
+    </section>
+    <!-- END SECTION FOR FEEDBACK -->
+    <footer>
+        <div class="container">
+            <div class="cta d-block d-md-flex align-items-center px-5">
+                <div>
+                    <h2 class="mb-0">Ready for a next project?</h2>
+                    <h3 class="text-dark">Let's get started!</h3>
+                </div>
+                <div class="ml-auto">
+                    <a href="#" class="btn btn-dark rounded-0 py-3 px-5">Contact us</a>
+                </div>
+            </div>
+            <div class="social">
+                <h2> Follow Us</h2>
+                <a href="https://www.linkedin.com/in/ahmed-abdelrashed-581607254"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100024575770751&mibextid=ZbWKwL"><i
+                        class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- BOOTSTRAP JAVA SCRIPT -->
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- MAIN Tampelte JAVA SCRIPT -->
+    <script src="JS/script.js"></script>
+    <script src="JS/Addfeedback.js"></script>
+
+</body>
+
+</html>
