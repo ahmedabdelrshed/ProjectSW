@@ -135,17 +135,36 @@ function ViewCategories(categories) {
    onClick="fetchProducts()" >
   All</button>`;
   categories.forEach((categorie) => {
+    var name = decryptData(categorie.name);
+    console.log(name);
     categorieshtml += `            
-    <button class="btn btn-warning  btn-outline-dark  border-warning  mx-lg-5" onClick="searchBycategorie('${categorie.name}')">
-    ${categorie.name}</button>
+    <button class="btn btn-warning  btn-outline-dark  border-warning  mx-lg-5" onClick="searchBycategorie('${name}')">
+    ${name}</button>
       `;
   });
   // console.log(categorieshtml);
   categoriesht.innerHTML = categorieshtml;
 }
 
+function decryptData(encryptedData) {
+  var key = CryptoJS.enc.Utf8.parse("ramzyashrafsaifashraf123"); // Convert key to CryptoJS WordArray
+  var iv = CryptoJS.enc.Utf8.parse("qwerqwer");
+  var decrypted = CryptoJS.TripleDES.decrypt(
+    {
+      ciphertext: CryptoJS.enc.Base64.parse(encryptedData),
+    },
+    key,
+    {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    }
+  );
+
+  return decrypted.toString(CryptoJS.enc.Utf8);
+}
+
 function searchBycategorie(name) {
-  
   var products = [];
   productsapi.forEach((product) => {
     if (product.category.name == name) {

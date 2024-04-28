@@ -43,6 +43,7 @@ public class SecurityConfig {
                                 .requestMatchers("/feedback/get").hasAuthority("ADMIN")
                                 .requestMatchers("/feedback/add").hasAuthority("USER")
                                 .requestMatchers("/orders/createorder").hasAuthority("USER")
+                                .requestMatchers("/orders/get-allorders").hasAuthority("ADMIN")
                                 .anyRequest()
                                 .authenticated())
                 .userDetailsService(userDetailsServiceImp)
