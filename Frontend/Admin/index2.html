@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="../Admin//JS/security.js"></script>
+    <script src="../Admin/JS/security.js"></script>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Admin Dashboard</title>
@@ -46,7 +46,8 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
@@ -54,17 +55,20 @@
                         <!-- Logo icon -->
                         <b class="logo-icon p-l-10">
                             <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
-                           
+
                         </b>
                         <!--End Logo icon -->
-                         <!-- Logo text -->
+                        <!-- Logo text -->
                         <span class="logo-text">
-                             <!-- dark Logo text -->
-                             <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
-                            
+                            <!-- dark Logo text -->
+                            <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
+
                         </span>
                     </a>
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                            class="ti-more"></i></a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -74,25 +78,30 @@
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a
+                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
+                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                         <!-- ============================================================== -->
                         <!-- create new -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">products</a>
+                                <a class="dropdown-item" href="products.html">products</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                    class="srh-btn"><i class="ti-close"></i></a>
                             </form>
                         </li>
                     </ul>
@@ -104,30 +113,37 @@
                         <!-- Comment -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
                             </a>
-                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">users</a>
-                                <a class="dropdown-item" href="#">orders</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="user.html">users</a>
+                                <a class="dropdown-item" href="order.html">orders</a>
 
                             </div>
- 
-                        <!-- ============================================================== -->
-                        <!-- End Messages -->
-                        <!-- ============================================================== -->
 
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- End Messages -->
+                            <!-- ============================================================== -->
+
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> FeedBacks</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
+                                    My Balance <span id="sam"></span></a>
+                                <a class="dropdown-item" href="grid.html"><i class="ti-email m-r-5 m-l-5"></i>
+                                    FeedBacks</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                <a class="dropdown-item" href="Update.html"><i class="ti-settings m-r-5 m-l-5"></i>
+                                    Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                <button class="dropdown-item" href="javascript:void(0)"  onclick="logout()"><i
+                                    class="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -149,18 +165,34 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Categories</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">FeedBacks</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">add </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                    class="hide-menu">Charts</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Products</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Categories</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                                    class="hide-menu">FeedBacks</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                                    class="hide-menu">add </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Products </span></a></li>
-                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> categories </span></a></li>
+                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Products
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> categories
+                                        </span></a></li>
                             </ul>
                         </li>
- 
+
 
                     </ul>
                 </nav>
@@ -222,7 +254,7 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Column -->
+                    <!-- Column -->
                     <div class="col-md-6 col-lg-3">
                         <div class="card card-hover">
                             <div class="box bg-warning text-center">
@@ -240,23 +272,25 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                         <div class="card">
+                        <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Latest Posts</h4>
                             </div>
                             <div class="comment-widgets scrollable">
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row m-t-0">
-                                    <div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/1.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">ramzy ashraf</h6>
-                                        <span class="m-b-15 d-block">this Website is very very useful for getting electronic devices. </span>
+                                        <span class="m-b-15 d-block">this Website is very very useful for getting
+                                            electronic devices. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">April 14, 2024</span> 
+                                            <span class="text-muted float-right">April 14, 2024</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                                             <button type="button" class="btn btn-success btn-sm">Publish</button>
                                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
@@ -265,12 +299,14 @@
                                 </div>
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/4.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text active w-100">
                                         <h6 class="font-medium">scarlett johnson</h6>
-                                        <span class="m-b-15 d-block">this Website is very very useful for getting electronic devices. </span>
+                                        <span class="m-b-15 d-block">this Website is very very useful for getting
+                                            electronic devices. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">May 10, 2023</span> 
+                                            <span class="text-muted float-right">May 10, 2023</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                                             <button type="button" class="btn btn-success btn-sm">Publish</button>
                                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
@@ -279,12 +315,14 @@
                                 </div>
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                    <div class="p-2"><img src="assets/images/users/5.jpg" alt="user" width="50"
+                                            class="rounded-circle"></div>
                                     <div class="comment-text w-100">
                                         <h6 class="font-medium">john anton</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
+                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing
+                                            and type setting industry. </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-right">August 1, 2023</span> 
+                                            <span class="text-muted float-right">August 1, 2023</span>
                                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                                             <button type="button" class="btn btn-success btn-sm">Publish</button>
                                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
@@ -293,7 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                         <!-- Card -->
+                        <!-- Card -->
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">To Do List</h4>
@@ -303,21 +341,36 @@
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label todo-label" for="customCheck">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> <span class="badge badge-pill badge-danger float-right">Today</span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing and typesetting industry.</span> <span
+                                                        class="badge badge-pill badge-danger float-right">Today</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Steave"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Jessica">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                                 <label class="custom-control-label todo-label" for="customCheck1">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing</span><span class="badge badge-pill badge-primary float-right">1 week </span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing</span><span
+                                                        class="badge badge-pill badge-primary float-right">1 week
+                                                    </span>
                                                 </label>
                                             </div>
                                             <div class="item-date"> 26 jun 2017</div>
@@ -326,19 +379,28 @@
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
                                                 <label class="custom-control-label todo-label" for="customCheck2">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                                                    <span class="todo-desc">Give Purchase report to</span> <span
+                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                         <li class="list-group-item todo-item" data-role="task">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck3">
                                                 <label class="custom-control-label todo-label" for="customCheck3">
-                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing </span> <span class="badge badge-pill badge-warning float-right">2 weeks</span>
+                                                    <span class="todo-desc">Lorem Ipsum is simply dummy text of the
+                                                        printing </span> <span
+                                                        class="badge badge-pill badge-warning float-right">2
+                                                        weeks</span>
                                                 </label>
                                             </div>
                                             <div class="item-date"> 26 jun 2017</div>
@@ -347,12 +409,18 @@
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck4">
                                                 <label class="custom-control-label todo-label" for="customCheck4">
-                                                    <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
+                                                    <span class="todo-desc">Give Purchase report to</span> <span
+                                                        class="badge badge-pill badge-info float-right">Yesterday</span>
                                                 </label>
                                             </div>
                                             <ul class="list-style-none assignedto">
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li class="assignee"><img class="rounded-circle" width="40" src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Priyanka">
+                                                </li>
+                                                <li class="assignee"><img class="rounded-circle" width="40"
+                                                        src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip"
+                                                        data-placement="top" title="" data-original-title="Selina"></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -361,7 +429,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                         <!-- card -->
+                        <!-- card -->
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title m-b-0">Progress Box</h4>
@@ -373,7 +441,9 @@
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 81%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                                            style="width: 81%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -384,7 +454,9 @@
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 72%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                            style="width: 72%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -395,7 +467,9 @@
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
+                                            style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
@@ -406,7 +480,9 @@
                                         </div>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                                            style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -420,7 +496,8 @@
                                 <li class="d-flex no-block card-body">
                                     <i class="fa fa-check-circle w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit.</a>
                                         <span class="text-muted">dolor sit amet, consectetur adipiscing</span>
                                     </div>
                                     <div class="ml-auto">
@@ -433,7 +510,8 @@
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-gift w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy
+                                            Birthday</a>
                                         <span class="text-muted">many many happy returns of the day</span>
                                     </div>
                                     <div class="ml-auto">
@@ -459,7 +537,8 @@
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-leaf w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
+                                        <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin
+                                            template</a>
                                         <span class="text-muted">i am very happy to approved by TF</span>
                                     </div>
                                     <div class="ml-auto">
@@ -472,7 +551,8 @@
                                 <li class="d-flex no-block card-body border-top">
                                     <i class="fa fa-question-circle w-30px m-t-5"></i>
                                     <div>
-                                        <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
+                                        <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any
+                                            question</a>
                                         <span class="text-muted">we glad that you choose our template</span>
                                     </div>
                                     <div class="ml-auto">
@@ -500,19 +580,31 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div id="calendar-events" class="">
-                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i class="fa fa-circle text-info m-r-10"></i>Event One</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i class="fa fa-circle text-success m-r-10"></i> Event Two</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i class="fa fa-circle text-danger m-r-10"></i>Event Three</div>
-                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i class="fa fa-circle text-warning m-r-10"></i>Event Four</div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-info"><i
+                                                                class="fa fa-circle text-info m-r-10"></i>Event One
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-success"><i
+                                                                class="fa fa-circle text-success m-r-10"></i> Event Two
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-danger"><i
+                                                                class="fa fa-circle text-danger m-r-10"></i>Event Three
+                                                        </div>
+                                                        <div class="calendar-events m-b-20" data-class="bg-warning"><i
+                                                                class="fa fa-circle text-warning m-r-10"></i>Event Four
+                                                        </div>
                                                     </div>
                                                     <!-- checkbox -->
                                                     <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="drop-remove">
-                                                        <label class="custom-control-label" for="drop-remove">Remove after drop</label>
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="drop-remove">
+                                                        <label class="custom-control-label" for="drop-remove">Remove
+                                                            after drop</label>
                                                     </div>
-                                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#add-new-event" class="btn m-t-20 btn-info btn-block waves-effect waves-light">
-                                                            <i class="ti-plus"></i> Add New Event
-                                                        </a>
+                                                    <a href="javascript:void(0)" data-toggle="modal"
+                                                        data-target="#add-new-event"
+                                                        class="btn m-t-20 btn-info btn-block waves-effect waves-light">
+                                                        <i class="ti-plus"></i> Add New Event
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -533,13 +625,17 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add Event</strong></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body"></div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                                <button type="button" class="btn btn-secondary waves-effect"
+                                    data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
+                                    event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
+                                    data-dismiss="modal">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -550,18 +646,21 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <form>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="control-label">Category Name</label>
-                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
+                                            <input class="form-control form-white" placeholder="Enter name" type="text"
+                                                name="category-name" />
                                         </div>
                                         <div class="col-md-6">
                                             <label class="control-label">Choose Category Color</label>
-                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                            <select class="form-control form-white" data-placeholder="Choose a color..."
+                                                name="category-color">
                                                 <option value="success">Success</option>
                                                 <option value="danger">Danger</option>
                                                 <option value="info">Info</option>
@@ -574,8 +673,10 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger waves-effect waves-light save-category"
+                                    data-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-secondary waves-effect"
+                                    data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -600,7 +701,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a >ramzy ashraf</a>.
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a>ramzy ashraf</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -635,7 +736,8 @@
     <script src="assets/libs/moment/min/moment.min.js"></script>
     <script src="assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
     <script src="dist/js/pages/calendar/cal-init.js"></script>
-    
+    <script src="JS/getmax.js"></script>
+
 
 </body>
 

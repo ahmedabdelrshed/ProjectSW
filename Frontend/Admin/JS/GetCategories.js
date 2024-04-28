@@ -39,13 +39,15 @@ fetchCategories()
 function ViewCategories(categories) {
   var categorieshtml = [];
   categories.forEach((categorie) => {
+    var decryptedName = decryptData(categorie.name);
+    var decryptedDescription = decryptData(categorie.description);
     categorieshtml += `<tr>
          <th scope="row">${categorie.id}</th>
-        <td>${categorie.name}</td>
-        <td>${categorie.description}</td>
+        <td>${decryptedName}</td>
+        <td>${decryptedDescription}</td>
         <td>
         <a href="../../Admin/Updatecategorie.html">  <button type="button" class="btn btn-success btn-sm"
-        onClick="update(${categorie.id},'${categorie.name}','${categorie.description}')">Update</button><a/>
+        onClick="update(${categorie.id},'${decryptedName}','${decryptedDescription}')">Update</button><a/>
         
             <button type="button" class="btn btn-danger btn-sm"  onClick="deleteCategory(${categorie.id})" >Delete</button>
         </td>
@@ -93,3 +95,17 @@ async function deleteCategory(id) {
     throw error;
   }
 }
+function decryptData(encryptedData) {
+  var key = CryptoJS.enc.Utf8.parse('ramzyashrafsaifashraf123'); // Convert key to CryptoJS WordArray
+  var iv = CryptoJS.enc.Utf8.parse('qwerqwer');
+  var decrypted = CryptoJS.TripleDES.decrypt({
+      ciphertext: CryptoJS.enc.Base64.parse(encryptedData)
+  }, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+  });
+
+  return decrypted.toString(CryptoJS.enc.Utf8);
+}
+

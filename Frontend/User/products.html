@@ -46,7 +46,7 @@
                     <div id="user" class="btn  border-1 border-warning mx-2 "><span class="text-warning">Welcome,</span>
                         <span id="uname"></span>
                     </div>
-                    <button  class="btn btn-warning  btn-outline-dark border-warning " onclick="logout(e)">Log
+                    <button class="btn btn-warning  btn-outline-dark border-warning " onclick="logout()">Log
                         out</button>
                 </div>
             </div>
@@ -59,25 +59,27 @@
             <div id="products-items">
 
             </div>
-            <div class="total-price" ><span class="bg-warning text-primary p-2 mx-3">Total Price :</span> <span id="total"> </span></div>
-            <button class="btn btn-dark btn-outline-primary text-light my-5 total-price " id="Confirm" style="display: block;"> Confirm Your Order</button>
+            <div class="total-price"><span class="bg-warning text-primary p-2 mx-3">Total Price :</span> <span
+                    id="total"> </span></div>
+            <button class="btn btn-dark btn-outline-primary text-light my-5 total-price " id="Confirm"
+                style="display: block;"> Confirm Your Order</button>
         </div>
     </section>
 
     <section>
         <div class="container form my-5">
             <form action="" class="mx-lg-5 contact-form">
-                <p id="msg"></p>
+
                 <h2>Feel Free to Send Your Feedback</h2>
+                <p id="msg"></p>
                 <div class="mb-3">
                     <label for="range" class="form-label">Rate range</label>
-                    <input type="number" class="form-control" placeholder="Rate range" id="emailAddress" name="range"
-                        required>
+                    <input type="number" class="form-control" placeholder="Rate range" id="range" name="range" required>
                 </div>
                 <div class="mb-3">
                     <label for="comment">Feedback:</label>
                     <textarea class="form-control" rows="5" id="feedback" name="text" placeholder="Feedback"
-                        required></textarea>
+                        id="feedback" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-warning btn-outline-dark" id="sendfeedback">Send</button>
             </form>
@@ -88,6 +90,8 @@
     <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
     <!-- MAIN Tampelte JAVA SCRIPT -->
     <script src="JS/products.js"></script>
+    <script src="JS/Addfeedback.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>
 
 </html>

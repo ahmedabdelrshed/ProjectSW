@@ -1,33 +1,30 @@
 const jwtToken = sessionStorage.getItem("token");
 
 if (jwtToken) {
-   role = extractpayload(jwtToken)
-   if (role != "USER") {
-    
-        window.location = "../../Admin/form-wizard.html";
-     
-   }
+  role = extractpayload(jwtToken);
+  if (role != "USER") {
+    window.location = "../../Admin/form-wizard.html";
+  }
 } else {
-    
-        window.location = "../../index.html";
-     
+  window.location = "../../index.html";
 }
 
 function extractpayload(token) {
-    const payloadBase64 = token.split(".")[1];
-    const decodedPayload = atob(payloadBase64);
-    const payload = JSON.parse(decodedPayload);
-    console.log(payload);
-    return payload.Role;
-  }
+  const payloadBase64 = token.split(".")[1];
+  const decodedPayload = atob(payloadBase64);
+  const payload = JSON.parse(decodedPayload);
+  console.log(payload);
+  return payload.Role;
+}
 
-  //////////// log out ////////////
+//////////// log out ////////////
 
-  
-  function logout (e){
-    // e.preventDefault()
-    sessionStorage.clear();
-    setTimeout(() => {
-        window.location = "../../index.html";
-      }, 1000);
-  }
+function logout() {
+  // e.preventDefault()
+  sessionStorage.clear();
+  setTimeout(() => {
+    window.location = "../../index.html";
+  }, 1000);
+}
+
+

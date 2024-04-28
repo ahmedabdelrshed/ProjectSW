@@ -213,8 +213,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <a href="Addcategorie.html"> <button type="button" class="btn btn-primary btn-lg">Add
-                                Categorie</button></a>
+                        <h4 class="page-title">ALL Orders</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -231,14 +230,17 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title m-b-0">Categories Table</h5>
+                                <h5 class="card-title m-b-0">orders Table</h5>
                             </div>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">Id</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Description</th>
+                                        <th scope="col">product_ID</th>
+                                        <th scope="col">product_Name</th>
+                                        <th scope="col">quantity</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">totalprice</th>
                                     </tr>
                                 </thead>
                                 <tbody id="t-body">
@@ -288,8 +290,7 @@
                      ****************************************/
                     $('#zero_config').DataTable();
                 </script>
-                <script src="JS/GetCategories.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+                <script src="JS/order.js"></script>
 </body>
 
 </html>

@@ -142,8 +142,8 @@
                                 <a class="dropdown-item" href="javascript:void(0)"><i
                                         class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <button class="dropdown-item" href="javascript:void(0)"  onclick="logout()"><i
-                                    class="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>
+                                <button class="dropdown-item" href="javascript:void(0)" onclick="logout()"><i
+                                        class="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -213,8 +213,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <a href="Addcategorie.html"> <button type="button" class="btn btn-primary btn-lg">Add
-                                Categorie</button></a>
+                        <h4 class="page-title">ALL User</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -231,14 +230,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title m-b-0">Categories Table</h5>
+                                <h5 class="card-title m-b-0">users Table</h5>
                             </div>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">Id</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Description</th>
+                                        <th scope="col">FirstName</th>
+                                        <th scope="col">LastName</th>
+                                        <th scope="col">UserName</th>
                                     </tr>
                                 </thead>
                                 <tbody id="t-body">
@@ -288,7 +288,7 @@
                      ****************************************/
                     $('#zero_config').DataTable();
                 </script>
-                <script src="JS/GetCategories.js"></script>
+                <script src="JS/user.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>
 

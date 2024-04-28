@@ -65,8 +65,6 @@ async function createProduct(
     productFormData.append("categorie", selectcategorie.value);
     productFormData.append("amount", amount.value);
     const jwtToken = sessionStorage.getItem("token");
-    const urlSearchParams = new URLSearchParams(productFormData);
-    const encodedParams = urlSearchParams;
 
     // Append the encoded parameters to the URL
 

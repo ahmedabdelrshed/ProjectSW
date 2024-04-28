@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Admin Dashboard</title>
     <!-- Custom CSS -->
-    <script src="../Admin//JS/security.js"></script>
+    <script src="../Admin/JS/security.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="assets/libs/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" type="text/css"
@@ -145,8 +145,8 @@
                                 <a class="dropdown-item" href="javascript:void(0)"><i
                                         class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                <button class="dropdown-item" href="javascript:void(0)"  onclick="logout()"><i
+                                    class="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -168,18 +168,34 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Categories</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">FeedBacks</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">add </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                    class="hide-menu">Charts</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Products</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Categories</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                                    class="hide-menu">FeedBacks</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                                    class="hide-menu">add </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Products </span></a></li>
-                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> categories </span></a></li>
+                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Products
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> categories
+                                        </span></a></li>
                             </ul>
                         </li>
- 
+
 
                     </ul>
                 </nav>
@@ -267,7 +283,7 @@
                                             class="col-sm-3 text-right control-label col-form-label">Categorie</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="selectcategorie">
-                                                
+
                                             </select>
                                         </div>
                                     </div>
@@ -277,8 +293,7 @@
                                             Upload</label>
                                         <div class="col-md-9">
                                             <div class="custom-file">
-                                                <input type="file" class="form-control-file"
-                                                    id="image" name="file">
+                                                <input type="file" class="form-control-file" id="image" name="file">
                                             </div>
                                         </div>
                                     </div>
@@ -372,6 +387,7 @@
                     </script>
                     <script src="JS/selectcategorie.js"></script>
                     <script src="JS/AddProduct.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ submit.addEventListener("click", function (e) {
   if (username.value === "" || password.value === "") {
     massage.style.display = "block";
   } else {
+    
     login(username.value, password.value)
       .then((data) => {
         console.log(data.token);
@@ -64,5 +65,17 @@ function Authorization(role) {
     }, 1500);
   }
 }
+function decryptData(encryptedData) {
+  var key = CryptoJS.enc.Utf8.parse('ramzyashrafsaifashraf123'); // Convert key to CryptoJS WordArray
+  var iv = CryptoJS.enc.Utf8.parse('qwerqwer');
+  var decrypted = CryptoJS.TripleDES.decrypt({
+      ciphertext: CryptoJS.enc.Base64.parse(encryptedData)
+  }, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+  });
 
+  return decrypted.toString(CryptoJS.enc.Utf8);
+}
 // Example usage:

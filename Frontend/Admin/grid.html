@@ -11,8 +11,9 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Admin Dashboard</title>
-    <script src="../Admin//JS/security.js"></script>
     <!-- Custom CSS -->
+    <script src="../Admin/JS/security.js"></script>
+
     <link href="dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,6 +21,37 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
+
+
+<style>
+    /* Style for the table */
+    #feedbackTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    /* Style for table header */
+    #feedbackTable th {
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    /* Style for table body */
+    #feedbackTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    /* Style for alternate table rows */
+    #feedbackTable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
 </head>
 
 <body>
@@ -118,8 +150,8 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                            </div>
+                                <button class="dropdown-item" href="javascript:void(0)"  onclick="logout()"><i
+                                    class="fa fa-power-off m-r-5 m-l-5"></i> Logout</button>                            </div>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -140,18 +172,34 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Products</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Categories</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">FeedBacks</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">add </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="index2.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                    class="hide-menu">Charts</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="products.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Products</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="Categories.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Categories</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                                    class="hide-menu">FeedBacks</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                                    class="hide-menu">add </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Products </span></a></li>
-                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> categories </span></a></li>
+                                <li class="sidebar-item"><a href="AddProduct.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Products
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="Addcategorie.html" class="sidebar-link"><i
+                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> categories
+                                        </span></a></li>
                             </ul>
                         </li>
- 
+
 
                     </ul>
                 </nav>
@@ -173,6 +221,7 @@
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">ALL Feedbacks</h4>
+
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -194,16 +243,18 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Full Width</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">id</th>
+                                                <th scope="col">raterange</th>
+                                                <th scope="col">text</th>
+                                            </tr>
+                                            <tbody id="t-body">
+                                                
+                                            </tbody>
+                                        </table>
+                        
             <footer class="footer text-center">
                 All Rights Reserved by Matrix-admin. Designed and Developed by <a >+++++++</a>.
             </footer>
@@ -234,6 +285,9 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
+    <script src="JS/feedback.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
 </body>
 
 </html>

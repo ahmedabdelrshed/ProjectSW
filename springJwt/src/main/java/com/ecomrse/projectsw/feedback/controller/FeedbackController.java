@@ -15,7 +15,7 @@ public class FeedbackController {
   private FeedbackService feedbackService;
   @CrossOrigin(origins = "*")
   @GetMapping("/get")
-  public List<Feedback> getAllFeedback() {
+  public List<Feedback> getAllFeedback() throws Exception {
     return feedbackService.getFeedbacks();
   }
   @CrossOrigin(origins = "*")

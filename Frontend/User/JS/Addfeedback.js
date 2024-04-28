@@ -14,7 +14,8 @@ if (feedback.value == '') {
     msg.innerText = "Please Enter The Feedback";
     return;
 }
-addfeedback(range.value,feedback.value).then((data) => {
+var encryptedtext = encryptData(feedback.value);
+addfeedback(range.value,encryptedtext).then((data) => {
    console.log(data);
     })
     .catch((error) => {
@@ -44,3 +45,29 @@ async function addfeedback(raterange, text) {
       console.error(error);
     }
   }
+  function encryptData(firstName) {
+    var key = CryptoJS.enc.Utf8.parse('ramzyashrafsaifashraf123'); // Convert key to CryptoJS WordArray
+    var iv = CryptoJS.enc.Utf8.parse('qwerqwer'); // Convert IV to CryptoJS WordArray
+  
+    var encrypted = CryptoJS.TripleDES.encrypt(CryptoJS.enc.Utf8.parse(firstName), key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+  
+    return encrypted.toString();
+  }
+  function encryptData(firstName) {
+    var key = CryptoJS.enc.Utf8.parse('ramzyashrafsaifashraf123'); // Convert key to CryptoJS WordArray
+    var iv = CryptoJS.enc.Utf8.parse('qwerqwer'); // Convert IV to CryptoJS WordArray
+  
+    var encrypted = CryptoJS.TripleDES.encrypt(CryptoJS.enc.Utf8.parse(firstName), key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+  
+    return encrypted.toString();
+  }
+  
+  
