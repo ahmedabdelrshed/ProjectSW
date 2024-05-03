@@ -54,4 +54,9 @@ public class CatgorieController {
     public List<Categorie> get() {
         return categorieService.getCategories();
     }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/count")
+    public int count() {
+        return categorieService.countUserUsers();
+    }
 }

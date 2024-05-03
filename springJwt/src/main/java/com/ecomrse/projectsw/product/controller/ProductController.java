@@ -96,6 +96,12 @@ try {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+    
+    @CrossOrigin(origins = "*")
+    @GetMapping("/count")
+    public int count() {
+        return productService.countUserUsers();
+    }
 
     
 }

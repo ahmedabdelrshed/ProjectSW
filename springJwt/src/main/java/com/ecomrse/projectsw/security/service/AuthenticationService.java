@@ -83,7 +83,9 @@ public class AuthenticationService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setRole(request.getRole());
         user = repository.save(user);
-        return new AuthenticationResponse("Regstiartion Succefully");
+
+        String jwt = jwtService.generateToken(user);
+        return new AuthenticationResponse(jwt);
     }
 
     public AuthenticationResponse authenticate(User request) {
@@ -124,6 +126,9 @@ public class AuthenticationService {
             }
         });
         return result;
+    }
+    public int countByRolee(Role role) {
+        return repository.countByRole(role);
     }
 
     private static final String key = "ramzyashrafsaifashraf123";

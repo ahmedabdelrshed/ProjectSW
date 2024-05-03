@@ -50,4 +50,18 @@ public class AuthenticationController {
         }
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/count")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public int count() {
+        Role role = Role.fromString("USER");
+        return authService.countByRolee(role);
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/counta")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public int counta() {
+        Role role = Role.fromString("ADMIN");
+        return authService.countByRolee(role);
+    }
 }

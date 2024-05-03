@@ -112,3 +112,5 @@ async function updateProduct(
     throw error; // Rethrow the error for handling in the caller
   }
 }
+
+

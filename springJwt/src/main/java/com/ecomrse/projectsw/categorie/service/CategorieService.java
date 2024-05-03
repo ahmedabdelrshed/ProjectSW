@@ -128,5 +128,9 @@ public class CategorieService {
         byte[] encryptedData = cipher.doFinal(name.getBytes());
         return Base64.getEncoder().encodeToString(encryptedData);
     }
+    public int countUserUsers() {
+        return (int) categorieRepo.count();
+    }
+
 
 }

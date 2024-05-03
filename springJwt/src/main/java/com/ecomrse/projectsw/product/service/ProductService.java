@@ -77,5 +77,8 @@ public class ProductService {
         product.setAmount(newAmount);
         productRepository.save(product);
     }
+    public int countUserUsers() {
+        return (int) productRepository.count();
+    }
 
 }

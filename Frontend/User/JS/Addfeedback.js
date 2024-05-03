@@ -57,17 +57,6 @@ async function addfeedback(raterange, text) {
   
     return encrypted.toString();
   }
-  function encryptData(firstName) {
-    var key = CryptoJS.enc.Utf8.parse('ramzyashrafsaifashraf123'); // Convert key to CryptoJS WordArray
-    var iv = CryptoJS.enc.Utf8.parse('qwerqwer'); // Convert IV to CryptoJS WordArray
-  
-    var encrypted = CryptoJS.TripleDES.encrypt(CryptoJS.enc.Utf8.parse(firstName), key, {
-        iv: iv,
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7
-    });
-  
-    return encrypted.toString();
-  }
+
   
   
